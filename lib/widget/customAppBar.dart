@@ -11,7 +11,7 @@ Widget customAPPBar() => Row(
         ),
         const Spacer(),
         IconButton(
-          constraints: const BoxC onstraints(),
+          constraints: const BoxConstraints(),
           onPressed: () {},
           icon: Icon(
             Icons.search,
