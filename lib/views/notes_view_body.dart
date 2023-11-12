@@ -14,11 +14,17 @@ class NotesView extends StatelessWidget {
           child: Column(
             children: <Widget>[
               customAPPBar(),
-              Expanded(child: noteListView()),
+              const Expanded(child: NoteListViewBuilder()),
             ],
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.add,
+            size: 30.sp,
+          )),
     );
   }
 }

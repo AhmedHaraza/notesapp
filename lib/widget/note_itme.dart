@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget noteItem() => Container(
+Widget noteItem({required Color color}) => Container(
       padding: REdgeInsets.only(top: 10, bottom: 10, left: 10),
-      decoration: const BoxDecoration(
-        color: Color(0xffffcc80),
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: const BorderRadius.all(
           Radius.circular(10),
         ),
       ),
@@ -23,7 +23,7 @@ Widget noteItem() => Container(
               child: Text(
                 "Build Your Career With Ahmed Haraza",
                 style:
-                    TextStyle(fontSize: 18.sp, color: const Color(0xffb58949)),
+                    TextStyle(fontSize: 18.sp, color:Colors.white),
               ),
             ),
             trailing: IconButton(
@@ -38,7 +38,7 @@ Widget noteItem() => Container(
             padding: REdgeInsets.only(right: 16),
             child: const Text(
               "Novamber12 , 2023",
-              style: TextStyle(color: Color(0xffb58949)),
+              style: TextStyle(color: Colors.white),
             ),
           )
         ],
