@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notesapp/widget/customAppBar.dart';
 import 'package:notesapp/widget/note_list_view_builder.dart';
+import 'package:notesapp/widget/showBouttomSheet.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({Key? key}) : super(key: key);
@@ -20,7 +21,14 @@ class NotesView extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return const AddNoteBouttomSheet();
+              },
+            );
+          },
           child: Icon(
             Icons.add,
             size: 30.sp,

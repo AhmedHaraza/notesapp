@@ -21,7 +21,8 @@ class NoteListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5,
+      padding: EdgeInsets.zero,
+      itemCount: 6,
       itemBuilder: (context, index) {
         return Padding(
           padding: REdgeInsets.symmetric(vertical: 8.0),
