@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notesapp/const_color.dart';
+import 'package:notesapp/sheard/styles/const_color.dart';
 
 Widget customTextFormFiled({required String text, required int? maxLines}) => TextFormField(
   maxLines: maxLines ,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notesapp/widget/custom_TextFormFiled.dart';
-import 'package:notesapp/widget/elevated_boutton.dart';
+import 'package:notesapp/sheard/widget/custom_TextFormFiled.dart';
+import 'package:notesapp/sheard/widget/elevated_boutton.dart';
 
 class AddNoteBouttomSheet extends StatefulWidget {
   const AddNoteBouttomSheet({Key? key}) : super(key: key);

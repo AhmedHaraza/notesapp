@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notesapp/views/notes_view_body.dart';
-import 'package:notesapp/widget/customAppBar.dart';
-import 'package:notesapp/widget/custom_TextFormFiled.dart';
+import 'package:notesapp/modules/notes_view/notes_view_body.dart';
+import 'package:notesapp/sheard/widget/customAppBar.dart';
+import 'package:notesapp/sheard/widget/custom_TextFormFiled.dart';
 
 class EditView extends StatelessWidget {
   const EditView({Key? key}) : super(key: key);
