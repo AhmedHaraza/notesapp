@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget customAPPBar() => Row(
+Widget customAPPBar({required String text, required Icon icon,required void Function()? onPressed}) => Row(
       children: [
         Text(
-          'Notes',
+          text,
           style: TextStyle(
             fontSize: 24.sp,
           ),
@@ -12,11 +12,8 @@ Widget customAPPBar() => Row(
         const Spacer(),
         IconButton(
           constraints: const BoxConstraints(),
-          onPressed: () {},
-          icon: Icon(
-            Icons.search,
-            size: 26.sp,
-          ),
+          onPressed: onPressed,
+          icon: icon
         )
       ],
     );

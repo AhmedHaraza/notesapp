@@ -26,7 +26,7 @@ class NoteListViewBuilder extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: REdgeInsets.symmetric(vertical: 8.0),
-          child: noteItem(color: color[index]),
+          child: NoteItme(color: color[index]),
         );
       },
     );

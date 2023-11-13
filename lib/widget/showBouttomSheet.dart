@@ -30,7 +30,13 @@ class _AddNoteBouttomSheetState extends State<AddNoteBouttomSheet> {
               ),
               elevatedBoutton(
                   context: context,
-                  onPressed: () {},
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                      );
+                    }
+                  },
                   child: const Text("Add"),
                   textColor: Colors.black,
                   backgroundColor: const Color(0xff74ffe9)),
