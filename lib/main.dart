@@ -26,14 +26,11 @@ class NotesApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return MultiBlocProvider(
-          providers: [BlocProvider(create: (context) => AddNoteCubit())],
-          child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme:
-                ThemeData(brightness: Brightness.dark, fontFamily: "Poppins"),
-            home: const NotesView(),
-          ),
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme:
+              ThemeData(brightness: Brightness.dark, fontFamily: "Poppins"),
+          home: const NotesView(),
         );
       },
     );
