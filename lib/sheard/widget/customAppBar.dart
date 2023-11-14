@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notesapp/sheard/widget/digital_clock.dart';
 
-Widget customAPPBar({required String text, required Icon icon,required void Function()? onPressed}) => Row(
+Widget customAPPBar(
+        {required String text,
+        required Icon icon,
+        required void Function()? onPressed}) =>
+    Row(
       children: [
         Text(
           text,
@@ -10,10 +15,11 @@ Widget customAPPBar({required String text, required Icon icon,required void Func
           ),
         ),
         const Spacer(),
+        const DigitalClock(),
+        const Spacer(),
         IconButton(
-          constraints: const BoxConstraints(),
-          onPressed: onPressed,
-          icon: icon
-        )
+            constraints: const BoxConstraints(),
+            onPressed: onPressed,
+            icon: icon)
       ],
     );
