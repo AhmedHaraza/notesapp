@@ -11,7 +11,7 @@ import 'package:notesapp/sheard/const/const.dart';
 void main() async {
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
-  await Hive.openBox(kNoteBox);
+  await Hive.openBox<NoteMOdel>(kNoteBox);
   Hive.registerAdapter(NoteMOdelAdapter());
   runApp(const NotesApp());
 }
