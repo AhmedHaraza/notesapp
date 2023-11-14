@@ -4,8 +4,15 @@ import 'package:notesapp/modules/notes_view/notes_view_body.dart';
 import 'package:notesapp/sheard/widget/customAppBar.dart';
 import 'package:notesapp/sheard/widget/custom_TextFormFiled.dart';
 
-class EditView extends StatelessWidget {
+class EditView extends StatefulWidget {
   const EditView({Key? key}) : super(key: key);
+
+  @override
+  State<EditView> createState() => _EditViewState();
+}
+
+class _EditViewState extends State<EditView> {
+  String? title, subTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +32,21 @@ class EditView extends StatelessWidget {
                     }));
                   }),
               SizedBox(height: 20.h),
-              customTextFormFiled(text: "Title", maxLines: 1),
+              CustomTextFormFiled(
+                text: "Title",
+                maxLines: 1,
+                onSaved: (value) {
+                  title = value;
+                },
+              ),
               const SizedBox(height: 20.0),
-              customTextFormFiled(text: "Content", maxLines: 5),
+              CustomTextFormFiled(
+                text: "Content",
+                maxLines: 5,
+                onSaved: (value) {
+                  subTitle = value;
+                },
+              ),
             ],
           ),
         ),

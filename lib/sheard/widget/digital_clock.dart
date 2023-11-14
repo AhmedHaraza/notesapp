@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 class DigitalClock extends StatefulWidget {
@@ -27,8 +28,8 @@ class _DigitalClockState extends State<DigitalClock> {
     final format = DateFormat('hh:mm:ss a');
     return Text(
       format.format(dateTime),
-      style: const TextStyle(
-          fontSize: 35, fontWeight: FontWeight.w700, color: Colors.black),
+      style: TextStyle(
+          fontSize: 30.sp, fontWeight: FontWeight.w700, color: Colors.white),
     );
   }
 }

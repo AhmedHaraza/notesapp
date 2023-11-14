@@ -1,13 +1,22 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notesapp/sheard/styles/const_color.dart';
 
-Widget customTextFormFiled({required String text, required int? maxLines}) => TextFormField(
-  maxLines: maxLines ,
-  cursorColor: kprimaryColor,
-      validator: (text) {
-        if (text == null || text.isEmpty) {
-          return 'Text is empty';
+class CustomTextFormFiled extends StatelessWidget {
+  const CustomTextFormFiled({Key? key,required this.text, required this.maxLines, this.onSaved}) : super(key: key);
+  final int maxLines;
+  final String text;
+  final void Function(String?)? onSaved;
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      onSaved: onSaved,
+      maxLines: maxLines,
+      cursorColor: kprimaryColor,
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'Filed is required';
         }
         return null;
       },
@@ -36,3 +45,5 @@ Widget customTextFormFiled({required String text, required int? maxLines}) => Te
         ),
       ),
     );
+  }
+}
