@@ -15,10 +15,9 @@ class NotesView extends StatelessWidget {
           child: Column(
             children: <Widget>[
               customAPPBar(
-                text: "Notes",
-                icon: const Icon(Icons.search),
-                onPressed: (){}
-              ),
+                  text: "Notes",
+                  icon: const Icon(Icons.search),
+                  onPressed: () {}),
               const Expanded(child: NoteListViewBuilder()),
             ],
           ),
@@ -27,6 +26,7 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
+              isScrollControlled: true,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16)),
               context: context,
