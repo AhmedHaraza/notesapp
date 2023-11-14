@@ -13,6 +13,7 @@ Widget customAPPBar(
           text,
           style: TextStyle(
             fontSize: 24.sp,
+            fontWeight: FontWeight.bold,
           ),
         ),
         const Spacer(),
