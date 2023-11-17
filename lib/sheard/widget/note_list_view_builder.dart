@@ -20,18 +20,6 @@ class NoteListViewBuilder extends StatelessWidget {
     Colors.teal,
     Colors.indigo,
     Colors.deepPurple,
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.yellow,
-    Colors.orange,
-    Colors.purple,
-    Colors.pink,
-    Colors.brown,
-    Colors.cyan,
-    Colors.teal,
-    Colors.indigo,
-    Colors.deepPurple,
   ];
   @override
   Widget build(BuildContext context) {
