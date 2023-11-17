@@ -6,12 +6,13 @@ import 'package:notesapp/sheard/const/const.dart';
 
 class ShowNote extends Cubit<NoteState> {
   ShowNote() : super(NoteInitialState());
-
-  featchAllNote() async {
+  List<NoteMOdel> notes = [];
+  void featchAllNote() {
     try {
       var notesBox = Hive.box<NoteMOdel>(kNoteBox);
-
-      emit(NoteSucsessState(notesBox.values.toList()));
+      notes = notesBox.values.toList();
+      emit(NoteSucsessState(notes));
+      print(notes);
     } catch (e) {
       emit(NoteFuailrState(errorMessage: e.toString()));
     }

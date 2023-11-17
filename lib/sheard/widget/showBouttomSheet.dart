@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note_state.dart';
+import 'package:notesapp/cubits/note_cubit/note_cubit.dart';
 import 'package:notesapp/sheard/widget/custom_formkey.dart';
 
 class AddNoteBouttomSheet extends StatelessWidget {
@@ -26,6 +27,7 @@ class AddNoteBouttomSheet extends StatelessWidget {
               print("Failed ${state.errorMessage}");
             }
             if (state is AddNoteSucsesstate) {
+              BlocProvider.of<ShowNote>(context).featchAllNote();
               Navigator.pop(context);
             }
           },

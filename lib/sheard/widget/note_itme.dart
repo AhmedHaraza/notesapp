@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notesapp/model/note_model.dart';
 import 'package:notesapp/modules/edit_view/edit_view.dart';
 
 class NoteItme extends StatelessWidget {
   const NoteItme({
     Key? key,
     required this.color,
+    required this.note,
   }) : super(key: key);
   final Color color;
+  final NoteMOdel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const EditView();
-          }));
-        },
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const EditView();
+        }));
+      },
       child: Container(
         padding: REdgeInsets.only(top: 10, bottom: 10, left: 10),
         decoration: BoxDecoration(
@@ -30,13 +33,13 @@ class NoteItme extends StatelessWidget {
             ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                "Flutter Tips",
+                note.title,
                 style: TextStyle(fontSize: 26.sp, color: Colors.black),
               ),
               subtitle: Padding(
                 padding: REdgeInsets.only(top: 14),
                 child: Text(
-                  "Build Your Career With Ahmed Haraza",
+                  note.subTitle,
                   style: TextStyle(fontSize: 18.sp, color: Colors.white),
                 ),
               ),
@@ -50,9 +53,9 @@ class NoteItme extends StatelessWidget {
             ),
             Padding(
               padding: REdgeInsets.only(right: 16),
-              child: const Text(
-                "Novamber12 , 2023",
-                style: TextStyle(color: Colors.white),
+              child: Text(
+                note.date,
+                style: const TextStyle(color: Colors.white),
               ),
             )
           ],

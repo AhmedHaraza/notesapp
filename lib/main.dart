@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notesapp/cubits/bloc_observer.dart';
+import 'package:notesapp/cubits/note_cubit/note_cubit.dart';
 import 'package:notesapp/model/note_model.dart';
 import 'package:notesapp/modules/notes_view/notes_view_body.dart';
 import 'package:notesapp/sheard/const/const.dart';
@@ -25,11 +26,14 @@ class NotesApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme:
-              ThemeData(brightness: Brightness.dark, fontFamily: "Poppins"),
-          home: const NotesView(),
+        return BlocProvider(
+          create: (context) => ShowNote(),
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme:
+                ThemeData(brightness: Brightness.dark, fontFamily: "Poppins"),
+            home: const NotesView(),
+          ),
         );
       },
     );
