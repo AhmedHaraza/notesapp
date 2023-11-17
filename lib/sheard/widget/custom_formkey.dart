@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note_state.dart';
 import 'package:notesapp/model/note_model.dart';
+import 'package:notesapp/sheard/helper/snakBar.dart';
+import 'package:notesapp/sheard/widget/colors_list_view.dart';
 import 'package:notesapp/sheard/widget/custom_TextFormFiled.dart';
 import 'package:notesapp/sheard/widget/elevated_boutton.dart';
 
@@ -42,9 +45,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subTitle = value;
             },
           ),
-          const SizedBox(
-            height: 40,
-          ),
+          SizedBox(height: 25.h),
+          const ColorsListView(),
+          SizedBox(height: 15.h),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return ElevatedBoutton(
@@ -54,13 +57,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                       var curentDate = DateTime.now();
-                      var formatedCurenetDate = DateFormat.yMd().format(curentDate);
+                      var formatedCurenetDate =
+                          DateFormat.yMd().format(curentDate);
                       var noteModel = NoteMOdel(
                           title: title!,
                           subTitle: subTitle!,
                           date: formatedCurenetDate,
                           color: Colors.blue.value);
                       BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                      snakbar(context, "Add Note Scsessfuly");
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
@@ -77,3 +82,5 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+
+
