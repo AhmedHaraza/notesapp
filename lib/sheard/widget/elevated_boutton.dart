@@ -36,12 +36,12 @@ class ElevatedBoutton extends StatelessWidget {
       ),
       child: isloading
           ? SizedBox(
-            width: 24.sp,
-            height: 24.sp,
-            child: const CircularProgressIndicator(
+              width: 24.sp,
+              height: 24.sp,
+              child: const CircularProgressIndicator(
                 color: Colors.black,
               ),
-          )
+            )
           : child,
     );
   }

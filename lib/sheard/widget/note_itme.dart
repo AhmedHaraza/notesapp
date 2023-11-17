@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notesapp/cubits/note_cubit/note_cubit.dart';
 import 'package:notesapp/model/note_model.dart';
-import 'package:notesapp/modules/edit_view/edit_view.dart';
-import 'package:notesapp/sheard/helper/snakBar.dart';
+import 'package:notesapp/modules/edit_view/edit_note_view.dart';
 
 class NoteItme extends StatelessWidget {
   const NoteItme({
@@ -24,7 +23,7 @@ class NoteItme extends StatelessWidget {
       return GestureDetector(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const EditView();
+            return EditNoteView(note: note);
           }));
         },
         child: Container(
@@ -75,5 +74,19 @@ class NoteItme extends StatelessWidget {
         ),
       );
     }
+  }
+
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> snakbar(
+      BuildContext context) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        backgroundColor: Color(0xff303030),
+        content: Text(
+          'Item Deleted Successfully',
+          style: TextStyle(color: Colors.white),
+        ),
+        duration: Duration(seconds: 1),
+      ),
+    );
   }
 }

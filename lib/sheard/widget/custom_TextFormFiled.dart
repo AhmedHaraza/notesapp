@@ -4,13 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notesapp/sheard/styles/const_color.dart';
 
 class CustomTextFormFiled extends StatelessWidget {
-  const CustomTextFormFiled({Key? key,required this.text, required this.maxLines, this.onSaved}) : super(key: key);
+  const CustomTextFormFiled({Key? key,required this.text, required this.maxLines, this.onSaved, this.onChanged}) : super(key: key);
   final int maxLines;
   final String text;
+  final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       onSaved: onSaved,
       maxLines: maxLines,
       cursorColor: kprimaryColor,
