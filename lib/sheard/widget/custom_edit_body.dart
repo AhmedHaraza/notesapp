@@ -14,6 +14,7 @@ class EditViewBody extends StatefulWidget {
 }
 
 class _EditViewBodyState extends State<EditViewBody> {
+  int curentIndex = 0;
   String? title, subTitle;
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class _EditViewBodyState extends State<EditViewBody> {
                       },
                     ),
                   );
-                  snakbar(context,'Item Update Successfully');
+                  snakbar(context, 'Item Update Successfully');
                 },
               ),
               SizedBox(height: 20.h),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notesapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notesapp/cubits/note_cubit/note_cubit.dart';
 import 'package:notesapp/model/note_model.dart';
 import 'package:notesapp/modules/edit_view/edit_note_view.dart';
@@ -8,11 +9,11 @@ import 'package:notesapp/modules/edit_view/edit_note_view.dart';
 class NoteItme extends StatelessWidget {
   const NoteItme({
     Key? key,
-    required this.color,
     required this.note,
+    required this.color,
   }) : super(key: key);
-  final Color color;
   final NoteMOdel note;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     var notes = BlocProvider.of<ShowNote>(context).notes;
@@ -29,7 +30,7 @@ class NoteItme extends StatelessWidget {
         child: Container(
           padding: REdgeInsets.only(top: 10, bottom: 10, left: 10),
           decoration: BoxDecoration(
-            color: color,
+            color: BlocProvider.of<AddNoteCubit>(context,listen: true).color,
             borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),

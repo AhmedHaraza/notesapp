@@ -6,7 +6,6 @@ import 'package:notesapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note_state.dart';
 import 'package:notesapp/model/note_model.dart';
 import 'package:notesapp/sheard/helper/snakBar.dart';
-import 'package:notesapp/sheard/widget/colors_list_view.dart';
 import 'package:notesapp/sheard/widget/custom_TextFormFiled.dart';
 import 'package:notesapp/sheard/widget/elevated_boutton.dart';
 
@@ -46,7 +45,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           SizedBox(height: 25.h),
-          const ColorsListView(),
           SizedBox(height: 15.h),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
@@ -82,5 +80,3 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
-
-
