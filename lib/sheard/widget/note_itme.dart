@@ -10,10 +10,8 @@ class NoteItme extends StatelessWidget {
   const NoteItme({
     Key? key,
     required this.note,
-    required this.color,
   }) : super(key: key);
   final NoteMOdel note;
-  final Color color;
   @override
   Widget build(BuildContext context) {
     var notes = BlocProvider.of<ShowNote>(context).notes;

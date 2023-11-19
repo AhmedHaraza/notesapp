@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notesapp/cubits/note_cubit/note_cubit.dart';
 import 'package:notesapp/cubits/note_cubit/note_state.dart';
-import 'package:notesapp/sheard/const/const.dart';
 import 'package:notesapp/sheard/widget/note_itme.dart';
 
 class NoteListViewBuilder extends StatelessWidget {
@@ -21,7 +20,6 @@ class NoteListViewBuilder extends StatelessWidget {
                 padding: REdgeInsets.symmetric(vertical: 8.0),
                 child: NoteItme(
                   note: state.notes[index],
-                  color: kcolors[index],
                 ),
               );
             },
